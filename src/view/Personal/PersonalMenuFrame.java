@@ -1,0 +1,304 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ */
+package view.personal;
+
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
+import view.SingInFrame;
+import view.profesional.UserManagerDialog;
+
+/**
+ *
+ * @author rpbp
+ */
+public class PersonalMenuFrame extends javax.swing.JFrame {
+
+    /**
+     * Creates new form MenuJDialog
+     */
+    public PersonalMenuFrame(SingInFrame parent, boolean modal) {
+
+        initComponents();
+        setLocationRelativeTo(null);
+        Image icono = new ImageIcon(getClass().getResource("/assets/icon.png")).getImage();
+        setIconImage(icono);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                System.exit(0);
+            }
+        });
+        setResizable(false);
+        setTitle("Menú");
+        getContentPane().setBackground(new Color(255, 228, 235));
+        this.centrosButton.setBackground(new Color(255, 255, 255));
+        this.chatButton.setBackground(new Color(255, 255, 255));
+        this.datosCuentaButton.setBackground(new Color(255, 255, 255));
+        this.tareasButton.setBackground(new Color(255, 255, 255));
+    }
+
+    public PersonalMenuFrame(UserManagerDialog view, boolean b) {
+        initComponents();
+        setLocationRelativeTo(null);
+        Image icono = new ImageIcon(getClass().getResource("/assets/icon.png")).getImage();
+        setIconImage(icono);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                System.exit(0);
+            }
+        });
+        setResizable(false);
+        setTitle("Menú");
+        getContentPane().setBackground(new Color(255, 228, 235));
+        this.centrosButton.setBackground(new Color(255, 255, 255));
+        this.chatButton.setBackground(new Color(255, 255, 255));
+        this.datosCuentaButton.setBackground(new Color(255, 255, 255));
+        this.tareasButton.setBackground(new Color(255, 255, 255));
+    }
+
+    public PersonalMenuFrame(PersonalDataDialog view, boolean b) {
+        initComponents();
+        setLocationRelativeTo(null);
+        Image icono = new ImageIcon(getClass().getResource("/assets/icon.png")).getImage();
+        setIconImage(icono);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                System.exit(0);
+            }
+        });
+        setResizable(false);
+        setTitle("Menú");
+        getContentPane().setBackground(new Color(255, 228, 235));
+        this.centrosButton.setBackground(new Color(255, 255, 255));
+        this.chatButton.setBackground(new Color(255, 255, 255));
+        this.datosCuentaButton.setBackground(new Color(255, 255, 255));
+        this.tareasButton.setBackground(new Color(255, 255, 255));
+    }
+
+    public PersonalMenuFrame(CenterManagerDialog view, boolean b) {
+        initComponents();
+        setLocationRelativeTo(null);
+        Image icono = new ImageIcon(getClass().getResource("/assets/icon.png")).getImage();
+        setIconImage(icono);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                System.exit(0);
+            }
+        });
+        setResizable(false);
+        setTitle("Menú");
+        getContentPane().setBackground(new Color(255, 228, 235));
+        this.centrosButton.setBackground(new Color(255, 255, 255));
+        this.chatButton.setBackground(new Color(255, 255, 255));
+        this.datosCuentaButton.setBackground(new Color(255, 255, 255));
+        this.tareasButton.setBackground(new Color(255, 255, 255));
+    }
+
+    public PersonalMenuFrame(PersonalTaskManagerDialog view, boolean b) {
+        initComponents();
+        setLocationRelativeTo(null);
+        Image icono = new ImageIcon(getClass().getResource("/assets/icon.png")).getImage();
+        setIconImage(icono);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                System.exit(0);
+            }
+        });
+        setResizable(false);
+        setTitle("Menú");
+        getContentPane().setBackground(new Color(255, 228, 235));
+        this.centrosButton.setBackground(new Color(255, 255, 255));
+        this.chatButton.setBackground(new Color(255, 255, 255));
+        this.datosCuentaButton.setBackground(new Color(255, 255, 255));
+        this.tareasButton.setBackground(new Color(255, 255, 255));
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jSeparator1 = new javax.swing.JSeparator();
+        registerLabel1 = new javax.swing.JLabel();
+        centrosButton = new javax.swing.JButton();
+        tareasButton = new javax.swing.JButton();
+        datosCuentaButton = new javax.swing.JButton();
+        chatButton = new javax.swing.JButton();
+        userLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        mainMenuBar = new javax.swing.JMenuBar();
+        fileMenu = new javax.swing.JMenu();
+        cerrarSesionMenuItem = new javax.swing.JMenuItem();
+        quitMenuItem = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 51));
+        jSeparator1.setForeground(new java.awt.Color(51, 0, 51));
+
+        registerLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 22)); // NOI18N
+        registerLabel1.setText("Menú");
+
+        centrosButton.setText("Centros");
+        centrosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                centrosButtonActionPerformed(evt);
+            }
+        });
+
+        tareasButton.setText("Tareas");
+
+        datosCuentaButton.setText("Cuenta");
+
+        chatButton.setText("Chat");
+        chatButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chatButtonActionPerformed(evt);
+            }
+        });
+
+        userLabel.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        userLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userLabel.setText(" ");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Escalada.png"))); // NOI18N
+
+        fileMenu.setText("File");
+
+        cerrarSesionMenuItem.setText("Cerrar Sesión");
+        fileMenu.add(cerrarSesionMenuItem);
+
+        quitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        quitMenuItem.setText("Quit");
+        fileMenu.add(quitMenuItem);
+
+        mainMenuBar.add(fileMenu);
+
+        setJMenuBar(mainMenuBar);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tareasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(centrosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(chatButton, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(datosCuentaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(registerLabel1)
+                        .addGap(161, 161, 161))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(userLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(registerLabel1))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(datosCuentaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tareasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(centrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void chatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chatButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chatButtonActionPerformed
+
+    private void centrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_centrosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_centrosButtonActionPerformed
+    
+    
+    //Añadir acción a los botones y menuItem.
+    public void addCerrarSesionMenuItem(ActionListener al) {
+        this.cerrarSesionMenuItem.addActionListener(al);
+    }
+
+    public void addQuitMenuItem(ActionListener al) {
+        this.quitMenuItem.addActionListener(al);
+    }
+
+    public void addTareasButtonActionListener(ActionListener al) {
+        this.tareasButton.addActionListener(al);
+    }
+
+    public void addDatosButtonActionListener(ActionListener al) {
+        this.datosCuentaButton.addActionListener(al);
+    }
+
+    public void addCentrosButtonActionListener(ActionListener al) {
+        this.centrosButton.addActionListener(al);
+    }
+
+    public void addChatButtonActionListener(ActionListener al) {
+        this.chatButton.addActionListener(al);
+    }
+    
+    //Añadir texto del label
+    public void setUserLabel(String user) {
+        this.userLabel.setText(user);
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton centrosButton;
+    private javax.swing.JMenuItem cerrarSesionMenuItem;
+    private javax.swing.JButton chatButton;
+    private javax.swing.JButton datosCuentaButton;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JMenuBar mainMenuBar;
+    private javax.swing.JMenuItem quitMenuItem;
+    private javax.swing.JLabel registerLabel1;
+    private javax.swing.JButton tareasButton;
+    private javax.swing.JLabel userLabel;
+    // End of variables declaration//GEN-END:variables
+}
