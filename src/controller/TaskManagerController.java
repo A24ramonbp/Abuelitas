@@ -307,7 +307,7 @@ public class TaskManagerController {
                     view.editableEspecialidadCombobox(true);
                 } else {
                     view.editableEspecialidadCombobox(false);
-                    view.setEspecialidadComboBox("Fisioterapeuta");
+                    view.setEspecialidadComboBox(userLogin.getUsuarioCuidador().getRol());
                 }
                 view.editableIdTextField(true);
                 view.editableDescripcionTextArea(true);
