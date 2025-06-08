@@ -74,10 +74,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
         this.cancelButton.addActionListener(al);
     }
 
-    public void addImprimirButtonActionListener(ActionListener al) {
-        this.imprimirButton.addActionListener(al);
-    }
-
     //Métodos para obtener o setear valor a los campos
     public void setNoteLabel(String note) {
         this.noteLabel.setText(note);
@@ -198,10 +194,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
         this.filtrarButton.setEnabled(state);
     }
 
-    public void enabledImprimirButton(boolean state) {
-        this.imprimirButton.setEnabled(state);
-    }
-
     public void enabledTareaTextField(boolean state) {
         this.tareaTextField.setEnabled(state);
     }
@@ -259,7 +251,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
         tareaLabel = new javax.swing.JLabel();
         tareaTextField = new javax.swing.JTextField();
         filtrarButton = new javax.swing.JButton();
-        imprimirButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -311,9 +302,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
         filtrarButton.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         filtrarButton.setText("Filtrar");
 
-        imprimirButton.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        imprimirButton.setText("Imprimir");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -346,8 +334,7 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
                         .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(imprimirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(140, 140, 140))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,7 +377,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imprimirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(noteLabel))
                 .addGap(19, 19, 19))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,7 +402,6 @@ public class PersonalTaskManagerDialog extends javax.swing.JDialog {
     private javax.swing.JButton filtrarButton;
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField idTextField;
-    private javax.swing.JButton imprimirButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel noteLabel;
     private javax.swing.JLabel tareaLabel;

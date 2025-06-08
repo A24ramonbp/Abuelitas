@@ -644,6 +644,7 @@ public class UserProfesionalManagerController {
         }
 
         String sql = "UPDATE UsuarioProfesional SET code=?, user=?, email=?, address=?, name=?, telefono=?, ca=? WHERE code = ?";
+        String sql2 = "UPDATE Centro SET email=?, address=?, name=?, telefono=?, ca=? WHERE code = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
 
         stmt.setString(1, view.getTextIdTextField());
@@ -656,8 +657,19 @@ public class UserProfesionalManagerController {
         stmt.setString(8, view.getTextIdTextField());
 
         int affectedRows = stmt.executeUpdate();
+        
+        PreparedStatement stmt2 = conn.prepareStatement(sql2);
 
-        return affectedRows > 0;
+        stmt2.setString(1, view.getTextEmailTextField());
+        stmt2.setString(2, view.getTextAddressTextField());
+        stmt2.setString(3, view.getTextNameTextField());
+        stmt2.setString(4, view.getTextTelephoneTextField());
+        stmt2.setString(5, view.getCAComboBox());
+        stmt2.setString(6, view.getTextIdTextField());
+
+        int affectedRows2 = stmt2.executeUpdate();
+
+        return affectedRows > 0 && affectedRows2 > 0;
     }
 
     //Método que devuelve información del usuario selccionado.

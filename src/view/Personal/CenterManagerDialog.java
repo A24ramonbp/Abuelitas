@@ -273,7 +273,7 @@ public class CenterManagerDialog extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Dni", "Name", "Email", "CA","Direccion", "Telefono"
+                "Codigo", "Name", "Email", "CA","Direccion", "Telefono"
             }
         ));
         centerScrollPane.setViewportView(centrosTable);

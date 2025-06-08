@@ -61,76 +61,11 @@ public class PersonalTaskManagerController {
         this.view.addEditButtonActionListener(this.getEditButtonActionListener());
         this.view.addBackButtonActionListener(this.getBackButtonActionListener());
         this.view.filtrarButtonActionListener(this.getFiltrarButtonActionListener());
-        this.view.addImprimirButtonActionListener(this.getPrintButtonActionListener());
         initComponents();
         infoTable();
     }
 
-    
-    //Acción del botón para imprimir
-    private ActionListener getPrintButtonActionListener() {
-        ActionListener al = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-                try {
-                    print();
-                } catch (IOException ex) {
-                    Logger.getLogger(ClientManagerController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(ClientManagerController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        };
-        return al;
-    }
-
-    //Método para realizar el reporte.
-    public void print() throws IOException, SQLException {
-        ConnectMdb connMdb = new ConnectMdb();
-        Connection conn = connMdb.getConnection();
-        String currentDirectory = System.getProperty("user.dir");
-        ResultSet result = null;
-
-        if (userLogin.getUsuarioPersonal() != null) {
-            String sql = "SELECT * FROM TareasPersonal Where dni = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, userLogin.getUsuarioPersonal().getDni());
-            result = stmt.executeQuery();
-
-        }
-
-        JRResultSetDataSource jrDataSource = new JRResultSetDataSource(result);
-
-        try {
-            conn.setAutoCommit(false);
-            Files.createDirectories(Paths.get(currentDirectory + "/Reports"));
-            JasperReport report = JasperCompileManager.compileReport(ClientManagerController.class.getClassLoader().getResourceAsStream("reports/TareasPersonal.jrxml")
-            );
-            JasperPrint print = JasperFillManager.fillReport(report, new HashMap<>(), jrDataSource);
-            JasperExportManager.exportReportToPdfFile(print, currentDirectory + "/Reports/TareasPersonales.pdf");
-
-            JRViewer viewer = new JRViewer(print);
-            JDialog dialog = new JDialog((Frame) null, "Vista previa del reporte", true);
-            dialog.getContentPane().add(viewer);
-            dialog.setSize(800, 600);
-            dialog.setLocationRelativeTo(null);
-            dialog.setVisible(true);
-
-        } catch (SQLException e) {
-            System.out.println("Connection error: " + e.getMessage());
-        } catch (IOException | JRException ex) {
-            Logger.getLogger(ClientManagerController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                if (conn != null && !conn.isClosed()) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(ClientManagerController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
 
     //Acción del botón filtro
     private ActionListener getFiltrarButtonActionListener() {
@@ -335,6 +270,7 @@ public class PersonalTaskManagerController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 edit = false;
+                view.clearForm();
                 view.editableIdTextField(true);
                 view.editableDescripcionTextArea(true);
                 view.enabledDeleteButton(false);
@@ -342,7 +278,6 @@ public class PersonalTaskManagerController {
                 view.enabledCancelButton(true);
                 view.enabledBackButton(false);
                 view.enabledAddButton(false);
-                view.enabledImprimirButton(false);
                 view.enabledTareaTextField(false);
             }
         };
@@ -406,7 +341,6 @@ public class PersonalTaskManagerController {
                 } else {
                     view.setNoteLabel("");
                     edit = true;
-                    view.enabledImprimirButton(false);
                     view.editableIdTextField(true);
                     view.editableDescripcionTextArea(true);
                     view.enabledEditButton(false);
@@ -528,7 +462,6 @@ public class PersonalTaskManagerController {
     public void initComponents() {
         edit = false;
 
-        view.enabledImprimirButton(true);
         view.editableIdTextField(false);
         view.editableDescripcionTextArea(false);
         view.enabledEditButton(false);

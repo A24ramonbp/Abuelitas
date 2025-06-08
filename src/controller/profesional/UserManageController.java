@@ -512,7 +512,7 @@ public class UserManageController {
 
             JOptionPane.showMessageDialog(view, "Comprueba que todo este correcto: \n\t"
                     + "- Todos los campos rellenados.\n\t"
-                    + "- El formato del id son de 1 a 6 dígitos"
+                    + "- El formato del id son de 1 a 6 dígitos\n\t"
                     + "- El formato del dni es 12345678a\n\t"
                     + "- El formato del teléfono es 123456789\n\t"
                     + "- El formato del email es x@x.x");

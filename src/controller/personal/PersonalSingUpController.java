@@ -237,7 +237,7 @@ public class PersonalSingUpController {
         String sqlProfesional = "SELECT * FROM UsuarioProfesional WHERE user = ?";
         String sqlPersonal = "SELECT * FROM UsuarioPersonal WHERE user = ?";
         String sqlAdmin = "SELECT * FROM UsuarioAdmin WHERE user = ?";
-        String sqlCuidador = "SELECT * FROM UsuarioCuiador WHERE user = ?";
+        String sqlCuidador = "SELECT * FROM UsuarioCuidador WHERE user = ?";
 
         PreparedStatement stmtProfesional = conn.prepareStatement(sqlProfesional);
         stmtProfesional.setString(1, user.getUsuario());
