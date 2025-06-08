@@ -445,6 +445,19 @@ public class UserProfesionalManagerController {
             return false;
         } else {
             String passwordEncriptada = encriptar(password);
+            
+            String sql2 = "Insert into Centro (code, email, address, name, telefono, ca) VALUES (?,?,?,?,?,?)";
+            PreparedStatement statament2 = conn.prepareStatement(sql2);
+
+            statament2.setString(1, id);
+            statament2.setString(2, email);
+            statament2.setString(3, address);
+            statament2.setString(4, name);
+            statament2.setString(5, telefono);
+            statament2.setString(6, ca);
+
+            int filasAfectadas2 = statament2.executeUpdate();
+            
             String sql = "Insert into UsuarioProfesional (code, user, password, email, address, name, telefono, ca) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement statament = conn.prepareStatement(sql);
 
@@ -459,7 +472,7 @@ public class UserProfesionalManagerController {
 
             int filasAfectadas = statament.executeUpdate();
 
-            if (filasAfectadas > 0) {
+            if (filasAfectadas > 0 && filasAfectadas2 > 0) {
                 return true;
             } else {
                 JOptionPane.showMessageDialog(view, "Hubo un problema al crear el usuario.");
